@@ -29,7 +29,7 @@ Vue.use(VueCookie);
 ```
 
 ### Usage
-The plugin is available through ```this.$cookie``` in components or ```Vue.cookie```
+The plugin is available through ```this.$cookies``` in components or ```Vue.cookies```
 
 Rather than implementing my own Cookie handling logic the plugin now wraps the awesome
 [tiny-cookie](https://github.com/Alex1990/tiny-cookie "Tiny cookie documentation") package
@@ -37,14 +37,14 @@ Rather than implementing my own Cookie handling logic the plugin now wraps the a
 ###### Example
 ``` javascript
 // From some method in one of your Vue components
-this.$cookie.set('test', 'Hello world!', 1);
+this.$cookies.set('test', 'Hello world!', 1);
 // This will set a cookie with the name 'test' and the value 'Hello world!' that expires in one day
 
 // To get the value of a cookie use
-this.$cookie.get('test');
+this.$cookies.get('test');
 
 // To delete a cookie use
-this.$cookie.delete('test');
+this.$cookies.delete('test');
 
 ```
 
@@ -52,10 +52,10 @@ this.$cookie.delete('test');
 ``` javascript
 
 // Setting the cookie Domain
-this.$cookie.set('test', 'Random value', {expires: 1, domain: 'localhost'});
+this.$cookies.set('test', 'Random value', {expires: 1, domain: 'localhost'});
 
 // As this cookie is set with a domain then if you wish to delete it you have to provide the domain when calling delete
-this.$cookie.delete('test', {domain: 'localhost'});
+this.$cookies.delete('test', {domain: 'localhost'});
 
 // Customizing expires
 var date = new Date;
